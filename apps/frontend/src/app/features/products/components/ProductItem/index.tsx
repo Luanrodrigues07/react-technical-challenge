@@ -6,9 +6,9 @@ const ProductItem = () => (
         <div className="flex w-[214.468px] h-[200px] p-[7.111px 126.204px 15.111px 13.345px] items-center justify-center shrink-[0]">
         <Image src={casaco} alt="" className="w-[184.919px] h-[177.778px]"/>
         </div>
-        <div className="flex-col mt-[1rem]">
+        <div className="flex-col mt-[0.5rem]">
         <strong>R$ 00</strong>
-        <p>Text</p>
+        <p className="text-[#8B96A5]">Text</p>
         </div>
     </div>
 )
