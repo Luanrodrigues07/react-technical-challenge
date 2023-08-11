@@ -5,7 +5,9 @@ import gsafe from "../app/images/gsafe.png"
 import { NavFilter } from "@/features/filters/components";
 import { ProductsGrid } from "@/features/products/components";
 import React from "react";
-import {HouseLine} from 'phosphor-react'
+import {House, CaretRight} from 'phosphor-react'
+
+
 
 const Home: React.FC = () => {
   return <>
@@ -14,13 +16,15 @@ const Home: React.FC = () => {
       className="flex h-[5.25rem] w-full items-center justify-between bg-gradient-to-tl from-purple-600 via-transparent to-[#3A3C5A]">
         <Image src={logo}  alt="" className="h-10 w-32 ml-16 top-7"></Image>
         <input placeholder="O que você está procurando?" 
-        className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-32 p-[1rem] text-black text-[16px] outline-none"></input>
+        className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none">
+        </input>
       </nav>
       <nav className="flex bg-[#EEEEEE] h-[5.25rem] w-full items-center text-[black] justify-between">
-        <div className="flex ml-[4rem]">
-          <HouseLine size={23}/>
-          <span>todos os produtos</span>
-        <strong className="ml-[11.3rem]">Produtos mais Buscados</strong>
+        <div className="flex ml-[4.5rem]">
+        <House size={20} className="flex mr-[0.5rem]"/>
+        <CaretRight size={20} className="flex mr-[0.5rem]"/>
+          <strong>Todos os produtos</strong>
+        <strong className="ml-[6.55rem] text-[20px]">Produtos mais Buscados</strong>
         </div>
         <div className="mr-[4rem]">
           <span className="mr-[0.5rem]">Ordenados por: </span>
