@@ -10,7 +10,12 @@ import { useQuery } from "@tanstack/react-query";
 import shareProducts, { Product } from "@/features/products/actions";
 
 const Home: React.FC = () => {
-  const { data: products } = useQuery<Product[]>({ queryFn: shareProducts });
+  const { data: products } = useQuery<Product[]>({
+    queryKey: ["products"],
+    queryFn: async () => {
+      return await shareProducts();
+    },
+  });
 
   return (
     <>

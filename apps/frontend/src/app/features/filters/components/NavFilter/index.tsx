@@ -1,9 +1,36 @@
 import Checkbox from "../Checkbox/";
 import { CaretDown } from "phosphor-react";
 import { use, useState } from "react";
-import Dropdown from "../DropDown";
+import Dropdown, { Option } from "../DropDown";
+import { Category, Color, shareCategories, shareColors } from "../../actions";
+import { useQuery } from "@tanstack/react-query";
 
 const NavFilter = () => {
+  const categoryQuery = useQuery<Category[], Error>(
+    ["categories"],
+    shareCategories,
+    {
+      initialData: [],
+    }
+  );
+
+  const colorQuery = useQuery<Color[], Error>(["colors"], shareColors, {
+    initialData: [],
+  });
+
+  const formatOption = (id: string, name: string): Option => {
+    return {
+      id,
+      name,
+    };
+  };
+
+  const formattedPrice = [
+    "R$ 0,01 - R$ 50,00",
+    "R$ 50,01 - R$ 100,00",
+    "R$ 100,01 - R$ 500,00",
+  ].map((price, index) => formatOption(index.toString(), price));
+
   return (
     <nav className="flex-col bg-[#FFFFFF] w-[17.5rem] h-fit rounded-[0.5rem] ml-[4rem] p-[1rem]">
       <div className="flex w-[15.5rem] h-[1.25rem] justify-between">
@@ -15,27 +42,13 @@ const NavFilter = () => {
       <div className="w-[15.5rem] mt-[1rem] text-black">
         <Dropdown
           categoryName="Categoria"
-          options={[
-            "Roupas de inverno",
-            "Roupas sociais",
-            "Roupas casuais",
-            "Mochilas",
-            "Eletronicos",
-            "Outros",
-          ]}
+          options={categoryQuery.data?.map((e) => formatOption(e.name, e.name))}
         />
         <Dropdown
           categoryName="Cor"
-          options={["Marrom", "Azul", "Roupas casuais", "Branco", "Preto"]}
+          options={colorQuery.data?.map((e) => formatOption(e.name, e.name))}
         />
-        <Dropdown
-          categoryName="Preço"
-          options={[
-            "R$ 0,01 - R$ 50,00",
-            "R$ 50,01 - R$ 100,00",
-            "R$ 100,01 - R$ 500,00",
-          ]}
-        />
+        <Dropdown categoryName="Preço" options={formattedPrice} />
       </div>
     </nav>
   );
