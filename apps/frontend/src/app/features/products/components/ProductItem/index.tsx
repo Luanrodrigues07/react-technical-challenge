@@ -26,7 +26,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <span className="font-inter">
           {formatCurrency(product?.price || 0)}
         </span>
-        <p className="text-[#8B96A5] font-inter">{product?.name}</p>
+        <p className="text-[#8B96A5] text-[14px] font-inter">{product?.name}</p>
       </div>
     </div>
   );

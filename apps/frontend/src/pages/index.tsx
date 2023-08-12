@@ -22,25 +22,31 @@ const Home: React.FC = () => {
             className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none font-inter"
           ></input>
         </nav>
-        <nav className="flex bg-[#EEEEEE] h-[5.25rem] w-full items-center text-[black] justify-between">
-          <div className="flex ml-[4.5rem]">
-            <House size={20} className="flex mr-[0.5rem] cursor-pointer" />
-            <CaretRight size={20} className="flex mr-[0.5rem]" />
-            <strong className="font-inter">Todos os produtos</strong>
-            <strong className="ml-[6.55rem] text-[20px] font-inter">
-              Produtos mais Buscados
-            </strong>
-          </div>
-          <div className="mr-[4rem]">
-            <span className="mr-[0.5rem] font-inter">Ordenados por: </span>
-            <select className="w-[11.25rem] h-[2.5rem] rounded-[2rem] text-black p-[0.5rem] text-[12px] outline-none">
-              <option className="font-inter">Relevancia</option>
-            </select>
-          </div>
-        </nav>
         <div className="flex bg-[#EEEEEE] w-full h-[62.8rem]">
-          <NavFilter />
-          {products?.length && <ProductsGrid products={products} />}
+          <div>
+            <div className="flex ml-[4.5rem] text-black m-[1.5rem]">
+              <House size={20} className="flex mr-[0.5rem] cursor-pointer" />
+              <CaretRight size={20} className="flex mr-[0.5rem]" />
+              <strong className="font-inter">Todos os produtos</strong>
+            </div>
+            <NavFilter />
+          </div>
+          <div>
+            <div className="flex justify-between m-[1rem]">
+              <strong className="ml-[2.3rem] text-[20px] font-inter text-[#585858]">
+                Produtos mais Buscados
+              </strong>
+              <div className="mr-[0.35rem]">
+                <span className="mr-[0.5rem] text-black font-inter">
+                  Ordenados por:{" "}
+                </span>
+                <select className="w-[11.25rem] h-[2.5rem] rounded-[2rem] text-black p-[0.5rem] text-[12px] outline-none">
+                  <option className="font-inter">Relevancia</option>w
+                </select>
+              </div>
+            </div>
+            {products?.length && <ProductsGrid products={products} />}
+          </div>
         </div>
         <footer className="flex bg-[#FFFFFF] w-full h-[25rem] text-black flex-col p-[4rem]">
           <div className="h-[10rem] flex flex-col">
