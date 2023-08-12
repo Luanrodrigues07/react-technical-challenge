@@ -1,5 +1,3 @@
-import casaco from "../../../../images/casaco.png";
-import Image from "next/image";
 import { Product } from "../../actions";
 
 type ProductItemProps = {
@@ -17,7 +15,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
   };
   return (
     <div className="flex-col bg-white rounded-[0.5rem] text-[black] p-[1.5rem] h-[310px] w-[235.91px] items-center">
-      <div className="flex w-[214.468px] h-[200px] p-[7.111px 126.204px 15.111px 13.345px] items-center justify-center shrink-[0]">
+      <div className="flex-col w-[214.468px] h-[200px] items-center justify-center">
         <img
           src={"http://localhost:1337" + product.image.url}
           alt=""
@@ -25,8 +23,10 @@ const ProductItem = ({ product }: ProductItemProps) => {
         />
       </div>
       <div className="flex-col mt-[0.5rem]">
-        <strong>{formatCurrency(product?.price || 0)}</strong>
-        <p className="text-[#8B96A5]">{product?.name}</p>
+        <span className="font-inter">
+          {formatCurrency(product?.price || 0)}
+        </span>
+        <p className="text-[#8B96A5] font-inter">{product?.name}</p>
       </div>
     </div>
   );

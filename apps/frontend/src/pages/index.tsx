@@ -19,22 +19,22 @@ const Home: React.FC = () => {
           <Image src={logo} alt="" className="h-10 w-32 ml-16 top-7"></Image>
           <input
             placeholder="O que você está procurando?"
-            className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none"
+            className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none font-inter"
           ></input>
         </nav>
         <nav className="flex bg-[#EEEEEE] h-[5.25rem] w-full items-center text-[black] justify-between">
           <div className="flex ml-[4.5rem]">
             <House size={20} className="flex mr-[0.5rem] cursor-pointer" />
             <CaretRight size={20} className="flex mr-[0.5rem]" />
-            <strong>Todos os produtos</strong>
-            <strong className="ml-[6.55rem] text-[20px]">
+            <strong className="font-inter">Todos os produtos</strong>
+            <strong className="ml-[6.55rem] text-[20px] font-inter">
               Produtos mais Buscados
             </strong>
           </div>
           <div className="mr-[4rem]">
-            <span className="mr-[0.5rem]">Ordenados por: </span>
+            <span className="mr-[0.5rem] font-inter">Ordenados por: </span>
             <select className="w-[11.25rem] h-[2.5rem] rounded-[2rem] text-black p-[0.5rem] text-[12px] outline-none">
-              <option>Relevancia</option>
+              <option className="font-inter">Relevancia</option>
             </select>
           </div>
         </nav>
@@ -44,19 +44,19 @@ const Home: React.FC = () => {
         </div>
         <footer className="flex bg-[#FFFFFF] w-full h-[25rem] text-black flex-col p-[4rem]">
           <div className="h-[10rem] flex flex-col">
-            <strong className="text-black w-[25rem] text-[14px] mt-[1rem] cursor-pointer">
+            <strong className="text-black w-[25rem] text-[14px] mt-[1rem] cursor-pointer font-inter">
               Atendimento
             </strong>
-            <span className="text-[#585858] w-[25rem] text-[12px] mt-[1rem] cursor-pointer">
+            <span className="text-[#585858] w-[25rem] text-[12px] mt-[1rem] cursor-pointer font-inter">
               Central de atendimento
             </span>
-            <span className="text=[#585858] w-[25rem] text-[12px] mt-[1rem] cursor-pointer">
+            <span className="text=[#585858] w-[25rem] text-[12px] mt-[1rem] cursor-pointer font-inter">
               Políticas de privacidade
             </span>
           </div>
           <div className="w-[82rem] h-[0.063rem] bg-[#D9D9D9] left-[4rem]"></div>
           <div className="relative bottom-0 h-[10rem]">
-            <span className="absolute bottom-14 left-0 w-[25rem] text-[14px] cursor-pointer">
+            <span className="absolute bottom-14 left-0 w-[25rem] text-[14px] cursor-pointer font-inter">
               Formas de pagamento
             </span>
             <Image

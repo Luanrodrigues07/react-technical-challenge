@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 
 interface CheckboxProps {
   option: string;
 }
 
-const Checkbox = ({ option }: CheckboxProps) => {
+const Checkbox: React.FC<CheckboxProps> = ({ option }) => {
   return (
     <div>
-      <div className="flex items-center gap-[0.25rem]">
-        <input type="checkbox" className="h-20px w-20px"/>
-        <label className="m-1 w-[244px] h-[20px] text-[#585858] justify-center items-start text-[12px]">{option}</label>
+      <div className="flex items-center gap-1 sm:gap-2">
+        <input type="checkbox" className="h-4 w-4 sm:h-5 sm:w-5" />
+        <label className="m-1 w-[80%] sm:w-[244px] h-4 text-[#585858] justify-center items-start text-xs sm:text-sm">
+          {option}
+        </label>
       </div>
     </div>
   );
