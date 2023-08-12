@@ -4,13 +4,12 @@ import { use, useState } from "react"
 import Dropdown from "../DropDown"
 
 const NavFilter = () => {
-
-  
+    
     return (
         <nav className="flex-col bg-[#FFFFFF] w-[17.5rem] h-fit rounded-[0.5rem] ml-[4rem] p-[1rem]">
           <div className="flex w-[15.5rem] h-[1.25rem] justify-between">
             <strong className="text-black text-[14px]">Filtrar por</strong>
-            <a className="text-black text-[12px] cursor-pointer hover:text-[purple]">Limpar Filtro</a>
+            <button className="text-black text-[12px] cursor-pointer hover:text-[purple]">Limpar Filtro</button>
           </div>
           <div className="w-[15.5rem] mt-[1rem] text-black">
             <Dropdown 
@@ -24,7 +23,8 @@ const NavFilter = () => {
             'Outros'
             ]}
             />
-            <Dropdown categoryName="Cor" 
+            <Dropdown 
+            categoryName="Cor" 
             options={[
                 'Marrom', 
                 'Azul', 
@@ -33,7 +33,8 @@ const NavFilter = () => {
                 'Preto',
                 ]}
             />
-            <Dropdown categoryName="Preço"
+            <Dropdown 
+            categoryName="Preço"
             options={[
                 'R$ 0,01 - R$ 50,00', 
                 'R$ 50,01 - R$ 100,00', 
