@@ -21,7 +21,7 @@ export async function shareCategories(): Promise<Category[]> {
     const response: AxiosResponse<{ data: Category[] }> = await axios.get(`${apiUrl}/categories`);
     return response.data.data;
   } catch (error) {
-    throw new Error('Erro ao buscar produtos da API Strapi: ');
+    throw new Error('Erro ao buscar produtos da API');
   }
 }
 
@@ -31,7 +31,7 @@ export async function shareColors(): Promise<Color[]> {
     const response: AxiosResponse<{ data: Color[] }> = await axios.get(`${apiUrl}/colors`);
     return response.data.data;
   } catch (error) {
-    throw new Error('Erro ao buscar produtos da API Strapi: ');
+    throw new Error('Erro ao buscar produtos da API');
   }
 }
 

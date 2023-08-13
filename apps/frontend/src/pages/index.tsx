@@ -19,7 +19,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div className=" bg-purple-custom w-screen h-screen">
+      <div className=" bg-purple-custom w-full h-full sm:h-full sm:w-screen">
         <nav className="flex h-[5.25rem] w-full items-center justify-between bg-gradient-to-tl from-[#9D59FF] via-transparent to-[#3A3C5A]">
           <Image src={logo} alt="" className="h-10 w-32 ml-16 top-7"></Image>
           <input
@@ -27,9 +27,9 @@ const Home: React.FC = () => {
             className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none font-inter"
           ></input>
         </nav>
-        <div className="flex bg-[#EEEEEE] w-full h-[62.8rem]">
+        <div className="flex flex-wrap bg-[#EEEEEE] w-full h-full">
           <div>
-            <div className="flex ml-[4.5rem] text-black m-[1.5rem]">
+            <div className="flex ml-[4.5rem] text-black m-[1.5rem] w-full">
               <House size={20} className="flex mr-[0.5rem] cursor-pointer" />
               <CaretRight size={20} className="flex mr-[0.5rem]" />
               <strong className="font-inter">Todos os produtos</strong>
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
             {products?.length && <ProductsGrid products={products} />}
           </div>
         </div>
-        <footer className="flex bg-[#FFFFFF] w-full h-[25rem] text-black flex-col p-[4rem]">
+        <footer className="flex bg-[#FFFFFF] w-full h-full text-black flex-col p-[4rem]">
           <div className="h-[10rem] flex flex-col">
             <strong className="text-black w-[25rem] text-[14px] mt-[1rem] cursor-pointer font-inter">
               Atendimento

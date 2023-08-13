@@ -1,6 +1,3 @@
-import Checkbox from "../Checkbox/";
-import { CaretDown } from "phosphor-react";
-import { use, useState } from "react";
 import Dropdown, { Option } from "../DropDown";
 import { Category, Color, shareCategories, shareColors } from "../../actions";
 import { useQuery } from "@tanstack/react-query";

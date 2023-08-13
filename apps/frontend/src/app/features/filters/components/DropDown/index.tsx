@@ -20,7 +20,7 @@ const Dropdown = ({ options, categoryName }: DropdownProps) => {
   };
 
   return (
-    <div>
+    <>
       <div className="flex justify-between">
         <strong className="text-[12px] mt-[0.7rem]">{categoryName}</strong>
         <a className="cursor-pointer" onClick={showingDrop}>
@@ -33,7 +33,7 @@ const Dropdown = ({ options, categoryName }: DropdownProps) => {
           <Checkbox key={option.id} option={option.name} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
