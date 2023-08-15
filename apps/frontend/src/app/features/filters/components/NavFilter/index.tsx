@@ -1,7 +1,6 @@
 import Dropdown, { Option } from "../DropDown";
 import { Category, Color, shareCategories, shareColors } from "../../actions";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 
 const NavFilter = () => {
   const categoryQuery = useQuery<Category[], Error>(

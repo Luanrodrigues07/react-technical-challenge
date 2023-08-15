@@ -4,7 +4,7 @@ import axios from "axios";
 
 const apiUrl = "http://localhost:1337/api";
 
-const Share = () => {
+const Search = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [searchValue, setSearchValue] = useState("");
 
@@ -28,12 +28,12 @@ const Share = () => {
     <div className="relative">
       <input
         placeholder="O que você está procurando?"
-        className="w-[39.25rem] h-[3rem] rounded-[0.5rem] p-[1rem] text-black text-[16px] outline-none font-inter mr-[1.5rem]"
+        className="flex sm:w-[39.25rem] rounded-[0.5rem] p-[1rem] text-black text-[16px] outline-none font-inter mr-[1.5rem]"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
       {searchValue.length > 0 && (
-        <ul className="bg-white text-black border rounded-[0.5rem] shadow-md absolute left-0 w-[39.25rem] mt-[0.2rem] font-inter">
+        <ul className="bg-white text-black border rounded-[0.5rem] shadow-md absolute left-0 sm:w-[39.25rem] mt-[0.2rem] font-inter">
           {filteredProducts.map((product) => (
             <li
               className="p-1 cursor-pointer border-2 font-inter"
@@ -48,4 +48,4 @@ const Share = () => {
   );
 };
 
-export default Share;
+export default Search;
