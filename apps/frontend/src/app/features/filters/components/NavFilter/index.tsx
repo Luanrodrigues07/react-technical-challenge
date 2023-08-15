@@ -4,10 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 const NavFilter = () => {
-  const [selectedPrice, setSelectedPrice] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null);
-
   const categoryQuery = useQuery<Category[], Error>(
     ["categories"],
     shareCategories,
@@ -27,12 +23,6 @@ const NavFilter = () => {
     };
   };
 
-  const clearFilters = () => {
-    setSelectedPrice(null);
-    setSelectedCategory(null);
-    setSelectedColor(null);
-  };
-
   const formattedPrice = [
     "R$ 0,01 - R$ 50,00",
     "R$ 50,01 - R$ 100,00",
@@ -43,10 +33,7 @@ const NavFilter = () => {
     <nav className="flex-col bg-[#FFFFFF] w-[17.5rem] h-fit rounded-[0.5rem] ml-[4rem] p-[1rem]">
       <div className="flex w-[15.5rem] h-[1.25rem] justify-between">
         <strong className="text-black text-[14px]">Filtrar por</strong>
-        <button
-          className="text-black text-[12px] cursor-pointer hover:text-[purple]"
-          onClick={clearFilters}
-        >
+        <button className="text-black text-[12px] cursor-pointer hover:text-[purple]">
           Limpar Filtro
         </button>
       </div>

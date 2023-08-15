@@ -8,7 +8,7 @@ import React from "react";
 import { House, CaretRight } from "phosphor-react";
 import { useQuery } from "@tanstack/react-query";
 import shareProducts, { Product } from "@/features/products/actions";
-
+import Share from "@/features/filters/components/Share";
 const Home: React.FC = () => {
   const { data: products } = useQuery<Product[]>({
     queryKey: ["products"],
@@ -22,10 +22,7 @@ const Home: React.FC = () => {
       <div className=" bg-purple-custom w-full h-full sm:h-full sm:w-screen">
         <nav className="flex h-[5.25rem] w-full items-center justify-between bg-gradient-to-tl from-[#9D59FF] via-transparent to-[#3A3C5A]">
           <Image src={logo} alt="" className="h-10 w-32 ml-16 top-7"></Image>
-          <input
-            placeholder="O que você está procurando?"
-            className="w-[39.25rem] h-[3rem] rounded-[0.5rem] mr-[5rem] p-[1rem] text-black text-[16px] outline-none font-inter"
-          ></input>
+          <Share />
         </nav>
         <div className="flex flex-wrap bg-[#EEEEEE] w-full h-full">
           <div>
